@@ -9,21 +9,23 @@ import { CartContext } from "./CartContext";
 const Bg = styled.div`
     background-color: #222;
     color:#fff;
-    padding: 50px 0;
+    padding: 0px 0 30px;
 `;
-const Title = styled.h1`
+const Title = styled.p`
+    color:#f5f5f4;
     margin:0;
-    font-weight:normal;
-    font-size:3rem;
+    font-weight:500;
+    font-size:2.5rem;
 `;
 const Desc = styled.p`
-    color:#aaa;
+    color:#ccc;
     font-size:.8rem;
 `;
 const ColumnsWrapper = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.2fr .8fr;
+    padding: 0px 10px;
+    gap: 30px;
     img{
         max-width: 100%;
     }
@@ -35,7 +37,7 @@ const Column = styled.div`
 const ButtonsWrapper = styled.div`
     display: flex;
     gap:10px;
-    margin-top:45px
+    margin-top:35px
 `;
 
 export default function Featured({product}) {
@@ -49,7 +51,10 @@ export default function Featured({product}) {
                 <ColumnsWrapper>
                     <Column>
                         <div>
-                            <Title>{product.title}</Title>
+                            <div>
+                                <img width="400" height="60" src="https://alx-ecommerce.s3.amazonaws.com/1686941748644.png" />
+                            </div>
+                            <Title></Title>
                             <Desc>{product.description}</Desc>
                             <ButtonsWrapper>
                                 <ButtonLink href={"/products/"+product._id} outline white >Read more</ButtonLink>
@@ -61,7 +66,7 @@ export default function Featured({product}) {
                         </div>
                     </Column>
                     <Column>
-                        <img src="https://alx-ecommerce.s3.amazonaws.com/1686726888079.jpg" />
+                        <img width="300" height="350" src="https://alx-ecommerce.s3.amazonaws.com/1686907447712.png" />
                     </Column>
                 </ColumnsWrapper>
             </Center>
